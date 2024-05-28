@@ -1,8 +1,8 @@
-import 'package:behealth/pages/work_out.dart';
+import 'package:behealth/componets/my_nav_bar.dart';
+import 'package:behealth/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'pages/health.dart';
-import 'pages/home.dart';
+import 'pages/home_page.dart';
 // import 'pages/home.dart';
 
 void main() {
@@ -24,5 +24,6 @@ class MyApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         home: const HomePage());
+    //  WorkOut()
   }
 }

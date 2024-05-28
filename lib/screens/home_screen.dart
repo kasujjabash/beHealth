@@ -3,20 +3,24 @@ import 'package:flutter/material.dart';
 import '../componets/activitytile.dart';
 import '../componets/avatar.dart';
 import '../componets/banner.dart';
-import 'wortout_details_page.dart';
+import '../pages/wortout_details_page.dart';
 
-class WorkOut extends StatelessWidget {
-  const WorkOut({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Work out'),
+        title: const Text('Be health'),
         centerTitle: true,
+        leading: const Icon(
+          Icons.person,
+          size: 25,
+        ),
         actions: const [
           Icon(
-            Icons.notifications_active,
+            Icons.wallet,
             size: 25,
           ),
           Padding(padding: EdgeInsets.all(10))
@@ -25,11 +29,13 @@ class WorkOut extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
-          
           children: [
             //banner
             const HomeBanner(
-              text: "Today's workout",
+              text: "Welcome to BeHealth!",
+              subText:
+                  'Expert medical advice and \nconsultations, paid with crypto.',
+              image: 'lib/images/banner_image.png',
             ),
             const SizedBox(
               height: 20,
