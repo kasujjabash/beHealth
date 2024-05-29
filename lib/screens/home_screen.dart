@@ -1,6 +1,6 @@
-import 'package:behealth/models/work_models/activities.dart';
+import 'package:behealth/models/health_model/doctors.dart';
 import 'package:flutter/material.dart';
-import '../componets/activitytile.dart';
+import '../componets/doctor_tile.dart';
 import '../componets/avatar.dart';
 import '../componets/banner.dart';
 import '../pages/wortout_details_page.dart';
@@ -27,7 +27,8 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding:
+            const EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 10),
         child: Column(
           children: [
             //banner
@@ -91,9 +92,9 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                       height: 5,
                     ),
-                    //text coachs
+                    //text
                     Text(
-                      'Coachs',
+                      'For medication',
                       style: TextStyle(fontSize: 16),
                     )
                   ],
@@ -106,16 +107,16 @@ class HomeScreen extends StatelessWidget {
             //activities
             Expanded(
               child: ListView.builder(
-                itemCount: Activities().activity.length,
+                itemCount: Doctors().doctor.length,
                 itemBuilder: (context, index) {
-                  final activity = Activities().activity[index];
-                  return ActivityTile(
-                    activity: activity,
+                  final activity = Doctors().doctor[index];
+                  return DoctorTile(
+                    doctor: activity,
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => WorkOutDetails(
-                                  activity: activity,
+                                  doctor: activity,
                                 ))),
                   );
                 },

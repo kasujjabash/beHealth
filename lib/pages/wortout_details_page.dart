@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../models/work_models/activity.dart';
+import '../models/health_model/doctor.dart';
 
 class WorkOutDetails extends StatelessWidget {
-  final Activity activity;
-  const WorkOutDetails({super.key, required this.activity});
+  final Doctor doctor;
+  const WorkOutDetails({super.key, required this.doctor});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(activity.title),
+        title: Text(doctor.title),
       ),
       body: const Column(
         children: [],
