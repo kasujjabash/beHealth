@@ -7,27 +7,39 @@ class Doctors {
     Doctor(
         title: 'Dr. Bashir Kasujja',
         imagePath: 'lib/images/bash.png',
-        description: 'Dentist'),
+        description: 'Dentist',
+        about:
+            "We all have become more aware of our health this year. With telemedicine's rapid growth,We all have become more aware of our health this year. With telemedicine's rapid growth,"),
     //Doctor 2
     Doctor(
         title: 'Dr. John Bosica',
         imagePath: 'lib/images/bash.png',
-        description: 'Othopedician'),
+        description: 'Othopedician',
+        about:
+            "We all have become more aware of our health this year. With telemedicine's rapid growth,,We all have become more aware of our health this year. With telemedicine's rapid growth,"),
     //Doctor 3
     Doctor(
         title: 'Dr. Shafic Nsubuga',
         imagePath: 'lib/images/bash.png',
-        description: 'Surgon'),
+        description: 'Surgon',
+        about:
+            "We all have become more aware of our health this year. With telemedicine's rapid growth,"),
     //Doctor 3
     Doctor(
-        title: 'Dr. Oscar Rukundo',
-        imagePath: 'lib/images/bash.png',
-        description: 'Surgon'),
+      title: 'Dr. Oscar Rukundo',
+      imagePath: 'lib/images/bash.png',
+      description: 'Surgon',
+      about:
+          "We all have become more aware of our health this year. With telemedicine's rapid growth,",
+    ),
     //Doctor 4
     Doctor(
-        title: 'Dr. Opendo Charlis',
-        imagePath: 'lib/images/bash.png',
-        description: 'Councilor'),
+      title: 'Dr. Opendo Charlis',
+      imagePath: 'lib/images/bash.png',
+      description: 'Councilor',
+      about:
+          "We all have become more aware of our health this year. With telemedicine's rapid growth,",
+    ),
   ];
 
 /* GETTERS GO HERE*/

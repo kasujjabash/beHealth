@@ -1,5 +1,4 @@
-import 'package:behealth/componets/my_nav_bar.dart';
-import 'package:behealth/screens/home_screen.dart';
+
 import 'package:flutter/material.dart';
 
 import 'pages/home_page.dart';

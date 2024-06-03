@@ -1,9 +1,12 @@
 import 'package:behealth/models/health_model/doctors.dart';
+import 'package:behealth/screens/profile.dart';
+import 'package:behealth/screens/wallet.dart';
 import 'package:flutter/material.dart';
-import '../componets/doctor_tile.dart';
+import 'package:flutter/widgets.dart';
+import '../pages/doctor_tile.dart';
 import '../componets/avatar.dart';
 import '../componets/banner.dart';
-import '../pages/wortout_details_page.dart';
+import '../pages/doctor_details_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,16 +17,24 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Be health'),
         centerTitle: true,
-        leading: const Icon(
-          Icons.person,
-          size: 25,
-        ),
-        actions: const [
-          Icon(
-            Icons.wallet,
+        leading: GestureDetector(
+          onTap: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const Profile())),
+          child: const Icon(
+            Icons.person,
             size: 25,
           ),
-          Padding(padding: EdgeInsets.all(10))
+        ),
+        actions: [
+          GestureDetector(
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const Wallet())),
+            child: const Icon(
+              Icons.wallet,
+              size: 25,
+            ),
+          ),
+          const Padding(padding: EdgeInsets.all(10))
         ],
       ),
       body: Padding(
@@ -115,7 +126,7 @@ class HomeScreen extends StatelessWidget {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => WorkOutDetails(
+                            builder: (context) => DoctorsDetailPage(
                                   doctor: activity,
                                 ))),
                   );
