@@ -37,7 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   provider: ^6.1.2
   google_nav_bar: ^5.0.6
-  bloc: ^8.1.4
+  table_calendar: ^3.1.1
+  coinbase_commerce: ^0.0.3
 
 dev_dependencies:
   flutter_test:

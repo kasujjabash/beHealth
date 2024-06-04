@@ -5,6 +5,7 @@ import 'pages/home_page.dart';
 // import 'pages/home.dart';
 
 void main() {
+  
   runApp(const MyApp());
 }
 
@@ -23,6 +24,5 @@ class MyApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         home: const HomePage());
-    //  WorkOut()
   }
 }
