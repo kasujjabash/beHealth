@@ -2,6 +2,7 @@ import 'package:behealth/componets/my_button.dart';
 import 'package:behealth/pages/book_appointment_page.dart';
 import 'package:flutter/material.dart';
 
+import '../componets/working_hours.dart';
 import '../models/health_model/doctor.dart';
 
 class DoctorsDetailPage extends StatelessWidget {
@@ -14,12 +15,12 @@ class DoctorsDetailPage extends StatelessWidget {
       // appBar: AppBar(
       //   title: Text(doctor.title),
       // ),
-      body: Column(
-        children: [
-          //image
-          Image.asset(doctor.imagePath),
-          Expanded(
-            child: Container(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            //image
+            Image.asset(doctor.imagePath),
+            Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
@@ -124,6 +125,62 @@ class DoctorsDetailPage extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
+                    //working hours
+                    const Text(
+                      "Working Hour",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    // sized box
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    //monday
+                    const WorkingHours(
+                      dayOfTheWeek: "Monday",
+                      startingTime: "12:30AM",
+                      endingTime: "8:00PM",
+                    ),
+                    // sized box
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    //monday
+                    const WorkingHours(
+                      dayOfTheWeek: "Tuesday",
+                      startingTime: "12:30AM",
+                      endingTime: "8:00PM",
+                    ),
+                    // sized box
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    //Wednesday
+                    const WorkingHours(
+                      dayOfTheWeek: "Wednesday",
+                      startingTime: "12:30AM",
+                      endingTime: "8:00PM",
+                    ),
+                    // sized box
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    //Thursday
+                    const WorkingHours(
+                      dayOfTheWeek: "Thursday",
+                      startingTime: "12:30AM",
+                      endingTime: "8:00PM",
+                    ),
+                    // sized box
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    //Friday
+                    const WorkingHours(
+                      dayOfTheWeek: "Friday",
+                      startingTime: "12:30AM",
+                      endingTime: "8:00PM",
+                    ),
                     //Book appointment button
                     MyButton(
                         text: 'Book Apointment',
@@ -139,9 +196,9 @@ class DoctorsDetailPage extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
