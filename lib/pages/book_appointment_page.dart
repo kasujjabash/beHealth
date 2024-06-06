@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../componets/calender.dart';
 import '../models/health_model/doctor.dart';
 import 'booking_confirmed.dart';
+import 'payment.dart';
 
 class BookAppointment extends StatefulWidget {
   final Doctor doctor;
@@ -25,14 +26,15 @@ class _BookAppointmentState extends State<BookAppointment> {
     });
   }
 
-  // Confirm payment method
+  // make payment method
   void confirmPayment() {
+    //? If the selected date is not null, then proceed
     if (_selectedDay != null) {
       showDialog(
         barrierDismissible: false,
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text("Are you sure you want to pay for scheduled call?"),
+          title: const Text("You are proceeding to pay."),
           actions: [
             // Cancel
             TextButton(
@@ -41,26 +43,28 @@ class _BookAppointmentState extends State<BookAppointment> {
               },
               child: const Text("Cancel"),
             ),
-            // Yes
+            // Pay
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => BookingConfirmed(),
-                  ),
+                  MaterialPageRoute(builder: (context) => const PaymentPage()
+                      // BookingConfirmed(),
+                      ),
                 );
               },
-              child: const Text("Yes"),
+              child: const Text("Pay"),
             ),
           ],
         ),
       );
     } else {
+      //? if the selected date is null, the show a snack bar
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Please select a date'),
+          backgroundColor: Colors.red,
+          content: Text('Please select a date for the appointment.'),
         ),
       );
     }
@@ -69,6 +73,15 @@ class _BookAppointmentState extends State<BookAppointment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey.shade100,
+        title: const Text(
+          "Book Appointment",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+      ),
+      backgroundColor: Colors.grey.shade100,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -110,7 +123,7 @@ class _BookAppointmentState extends State<BookAppointment> {
                         ),
                       const SizedBox(height: 20),
                       // Confirm payment
-                      MyButton(text: "Confirm payments", onTap: confirmPayment),
+                      MyButton(text: "Make payments", onTap: confirmPayment),
                     ],
                   ),
                 ),
