@@ -11,6 +11,16 @@ class Wallet extends StatelessWidget {
       appBar: AppBar(
         title: const Text("My Wallet"),
       ),
+      body: const Column(
+        children: [
+          // GridView.builder(
+          //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          //         crossAxisCount: 2),
+          //     itemBuilder: GridTile(
+          //       child:,
+          //      ),),
+        ],
+      ),
     );
   }
 }
