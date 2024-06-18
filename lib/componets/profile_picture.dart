@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ProfilePicture extends StatelessWidget {
   final String imagePath;
@@ -7,6 +8,7 @@ class ProfilePicture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // color: Colors.black,
       padding: const EdgeInsets.all(20),
       decoration: const BoxDecoration(
           // borderRadius: BorderRadius.only(
@@ -18,11 +20,13 @@ class ProfilePicture extends StatelessWidget {
       child: Column(
         children: [
           //profile picture
-          Center(
-            child: CircleAvatar(
-              radius: 60,
-              backgroundImage: AssetImage(imagePath),
-            ),
+          Row(
+            children: [
+              CircleAvatar(
+                radius: 60,
+                backgroundImage: AssetImage(imagePath),
+              ),
+            ],
           ),
         ],
       ),

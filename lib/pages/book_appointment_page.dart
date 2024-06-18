@@ -2,12 +2,10 @@ import 'package:behealth/componets/my_button.dart';
 import 'package:flutter/material.dart';
 import '../componets/calender.dart';
 import '../models/health_model/doctor.dart';
-import 'booking_confirmed.dart';
 import 'payment.dart';
 
 class BookAppointment extends StatefulWidget {
   final Doctor doctor;
-
   const BookAppointment({
     super.key,
     required this.doctor,
